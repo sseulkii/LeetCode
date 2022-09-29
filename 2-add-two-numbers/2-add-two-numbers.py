@@ -16,8 +16,8 @@ class Solution:
             n_reverse = list(map(int, str(num)[::-1]))
             list_node = ListNode()
             now = list_node
-            for i in range(len(n_reverse)):
-                now.next = ListNode(val = n_reverse[i])
+            for n in n_reverse:
+                now.next = ListNode(val = n)
                 now = now.next
             return list_node.next
             
