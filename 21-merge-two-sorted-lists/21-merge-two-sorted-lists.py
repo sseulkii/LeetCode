@@ -8,25 +8,24 @@ class Solution:
         list_node = ListNode()
         now = list_node
         
-        node1 = list1
-        node2 = list2
-        
-        while node1 and node2:
-            if node1.val <= node2.val:
-                now.next = node1
+        while list1 and list2:
+            if list1.val <= list2.val:
+                now.next = list1
                 now = now.next
-                node1 = node1.next
+                list1 = list1.next
             else:
-                now.next = node2
+                now.next = list2
                 now = now.next
-                node2 = node2.next
-        while node1:
-            now.next = node1
+                list2 = list2.next
+        
+        while list1:
+            now.next = list1
             now = now.next
-            node1 = node1.next
-        while node2:
-            now.next = node2
+            list1 = list1.next
+        
+        while list2:
+            now.next = list2
             now = now.next
-            node2 = node2.next
+            list2 = list2.next
         
         return list_node.next
