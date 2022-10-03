@@ -7,13 +7,10 @@ class Solution:
         tmp = s[0]
         
         for i in range(1, len(s)):
-            if s[i] not in tmp:
-                tmp += s[i]
-                d[i] = len(tmp)
-            else:
+            if s[i] in tmp:
                 idx = tmp.index(s[i])
                 tmp = tmp[idx + 1:]
-                tmp += s[i]
-                d[i] = len(tmp)
-                
+            tmp += s[i]
+            d[i] = len(tmp)
+            
         return max(d)
