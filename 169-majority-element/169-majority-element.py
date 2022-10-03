@@ -8,4 +8,5 @@ class Solution:
             else:
                 d[n] += 1
                 
-        return max(d.items(), key = lambda x: x[1])[0]
+        items = sorted(d.items(), key = lambda x: x[1], reverse = True)
+        return items[0][0]
