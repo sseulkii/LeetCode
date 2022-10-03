@@ -1,6 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        d = [0] * 46
+        d = [0] * (n + 1)
         
         if n == 1:
             return 1
