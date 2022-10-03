@@ -8,7 +8,5 @@ class Solution:
                 d[num] = 1
             else:
                 d[num] += 1
-                
-        for k, v in d.items():
-            if v > n / 2:
-                return k
+            if d[num] > n / 2:
+                return num
