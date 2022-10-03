@@ -1,11 +1,11 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        d = {}
+        dic = {}
         
         for i in nums:
-            if i not in d:
-                d[i] = 1
+            if i not in dic:
+                dic[i] = 1
             else:
-                d[i] += 1
+                dic[i] += 1
                 
-        return (min(d.items(), key = lambda x: x[1]))[0]
+        return (min(dic.items(), key = lambda x: x[1]))[0]
