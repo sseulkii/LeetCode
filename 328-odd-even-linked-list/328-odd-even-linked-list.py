@@ -11,8 +11,16 @@ class Solution:
             arr.append(head.val)
             head = head.next
             
-        arr_odd = [arr[i] for i in range(len(arr)) if (i % 2) == 0]
-        arr_even = [arr[i] for i in range(len(arr)) if (i % 2) == 1]
+        # arr_odd = [arr[i] for i in range(len(arr)) if (i % 2) == 0]
+        # arr_even = [arr[i] for i in range(len(arr)) if (i % 2) == 1]
+        
+        arr_odd, arr_even = [], []
+        
+        for i in range(len(arr)):
+            if i % 2 == 0:
+                arr_odd.append(arr[i])
+            else:
+                arr_even.append(arr[i])
         
         arr = arr_odd + arr_even
         
