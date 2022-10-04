@@ -25,30 +25,3 @@ class Solution:
             head = head.next
             
         return node.next
-        
-#         while l1 and l2:
-            
-#             extra, val = divmod((l1.val + l2.val + extra), 10)
-#             l1 = l1.next
-#             l2 = l2.next
-#             head.next = ListNode(val)
-#             head = head.next
-        
-#         while l1:
-#             extra, val = divmod((l1.val + extra), 10)
-#             l1 = l1.next
-#             head.next = ListNode(val)
-#             head = head.next
-            
-#         while l2:
-#             extra, val = divmod((l2.val + extra), 10)
-#             l2 = l2.next
-#             head.next = ListNode(val)
-#             head = head.next
-            
-#         while extra:
-#             extra, val = divmod(extra, 10)
-#             head.next = ListNode(val)
-#             head = head.next
-            
-#         return node.next
