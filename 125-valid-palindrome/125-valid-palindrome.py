@@ -1,7 +1,17 @@
+from collections import deque
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        phrase = ""
+        q = deque([])
+        
         for c in s:
             if c.isalnum():
-                phrase += c.lower()
-        return phrase == phrase[::-1]
+                q.append(c.lower())
+        
+        while q:
+            if len(q) == 1:
+                return True
+            if q.popleft() != q.pop():
+                return False
+            
+        return True
