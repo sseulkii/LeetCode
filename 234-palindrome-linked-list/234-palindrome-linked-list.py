@@ -3,14 +3,24 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+from collections import deque
+
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        arr = []
         
-        now = head
+        q = deque([])
         
-        while now:
-            arr.append(now.val)
-            now = now.next
+        node = head
+        
+        while node:
+            q.append(node.val)
+            node = node.next
             
-        return arr == arr[::-1]
+        while q:
+            if len(q) == 1:
+                return True
+            if q.popleft() != q.pop():
+                return False
+            
+        return True
