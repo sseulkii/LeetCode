@@ -1,5 +1,6 @@
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        
         s = ""
         
         for c in paragraph:
