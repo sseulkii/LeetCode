@@ -8,7 +8,6 @@ class Solution:
             else:
                 s += " "
             
-        words = paragraph.split()
         words = s.split()
         d = {}
         
