@@ -15,7 +15,7 @@ class Solution:
         for i in range(0, len(arr) - 1, 2):
             arr[i], arr[i + 1] = arr[i + 1], arr[i]
             
-        start = node = ListNode()
+        start = node = ListNode() # 이거 node로만 해주면 답 안나옴. 무조건 변수 두개 해줘서 하나는 고정하고 하나는 .next로 계속 이어지게 해줘야 함
         for n in arr:
             node.next = ListNode(val=n)
             node = node.next
