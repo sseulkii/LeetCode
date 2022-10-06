@@ -8,7 +8,7 @@ class Solution:
             else:
                 d[num] += 1
                 
-        arr = sorted([(key, val) for (key, val) in d.items()], key = lambda x: x[1], reverse = True)
+        arr = sorted([item for item in d.items()], key = lambda x: x[1], reverse = True)
         
         answer = []
         
