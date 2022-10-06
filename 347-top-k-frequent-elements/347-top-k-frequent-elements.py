@@ -1,3 +1,5 @@
+import heapq
+
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         d = {}
@@ -8,11 +10,15 @@ class Solution:
             else:
                 d[num] += 1
                 
-        arr = sorted([item for item in d.items()], key = lambda x: x[1], reverse = True)
+        h = []
         
+        for key, val in d.items():
+            heapq.heappush(h, (-val, key))
+            
         answer = []
         
-        for key, val in arr[:k]:
-            answer.append(key)
+        while k:
+            answer.append(heapq.heappop(h)[1])
+            k -= 1
             
         return answer
