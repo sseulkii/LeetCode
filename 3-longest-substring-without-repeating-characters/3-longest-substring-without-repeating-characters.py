@@ -5,16 +5,13 @@ class Solution:
             return 0
         
         d = [1] * len(s)
-        
-        left, right = 0, 0
         sub = ""
         
-        while left <= right and right < len(s):
-            if s[right] in sub:
-                idx = sub.index(s[right])
+        for i in range(len(s)):
+            if s[i] in sub:
+                idx = sub.index(s[i])
                 sub = sub[idx + 1:]
-            sub += s[right]
-            d[right] = len(sub)
-            right += 1
+            sub += s[i]
+            d[i] = len(sub)
             
         return max(d)
