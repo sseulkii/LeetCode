@@ -13,6 +13,7 @@ class Solution:
             heapq.heappush(h, (get_len(point), point))
             
         answer = []
+        
         for _ in range(k):
             answer.append(heapq.heappop(h)[1])
             
