@@ -1,15 +1,11 @@
+from bisect import bisect_left
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
-        start, end = 0, len(numbers) - 1
-        
-        while start < end:
-            total = numbers[start] + numbers[end]
-            if total == target:
-                return [start + 1, end + 1]
+        for k, v in enumerate(numbers):
+            expected = target - v
             
-            elif total > target:
-                end -= 1
-                
-            else:
-                start += 1
+            idx = bisect_left(numbers, expected, lo = k + 1, hi = len(numbers))
+            if idx < len(numbers) and numbers[idx] == expected:
+                return [k + 1, idx + 1]
