@@ -2,6 +2,7 @@ import heapq
 
 class Solution:
     def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
+        
         q = []
         
         for person in people:
