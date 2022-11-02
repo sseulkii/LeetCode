@@ -7,11 +7,15 @@ class Solution:
         for num in nums:
             heapq.heappush(q, -num)
             
-        result = []
-        while q:
-            result.append(-heapq.heappop(q))
-            # if len(result) == k - 1:
-            #     break
+        for _ in range(k - 1):
+            heapq.heappop(q)
+            
+        return -heapq.heappop(q)
+        # result = []
+#         while q:
+#             result.append(-heapq.heappop(q))
+#             # if len(result) == k - 1:
+#             #     break
                 
-        return result[k - 1]
+#         return result[k - 1]
             
